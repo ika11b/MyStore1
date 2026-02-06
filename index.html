@@ -1,154 +1,167 @@
-<!DOCTYPE html>
-<html lang="ka">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ჩემი მაღაზია</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/nav-footer.css">
-  <link rel="stylesheet" href="styles/buttons.css">
-</head>
-<body>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
 
-<header>
-<div class="container">
-    <div class="logo">
-        <a href="index.html">ჩემი მაღაზია</a>
-    </div>
+:root {
+    --primary-dark: #252525;
+    --text-white: #ffffff;
+    --accent-gold: #ffd700;
+}
 
-    <button class="burger-menu" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+header .container {
+    padding: 0 50px;
+    width: 100%;
+    height: 75px;
+    background-color: var(--primary-dark);
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+    position: fixed;
+    top: 0; 
+    z-index: 1000;
+}
 
-    <nav id="nav-menu">
-        <ul>
-            <li><a href="index.html">მთავარი</a></li>
-            <li><a href="#Contact">კონტაქტი</a></li>
-            <li><a href="cart.html">კალათა <img src="svg/cart-shopping-solid.svg" alt="კალათა" style="width:15px; height:15px;"></a></li>
-        </ul>
-    </nav>
-</div>
-</header>
+.logo a {
+    font-size: 24px;
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: bold;
+}
 
-<section class="products">
-<div class="main">
-    <h2>პოპულარული პროდუქცია</h2>
-    <div class="product-cards">
-        
-        <article class="product-card">
-            <img src="product-pictures/Omega3.jpg" alt="ომეგა 3">
-            <h3>თევზის ქონი</h3>
-            <p class="price">99.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (120 შეფასება)</p>
-            <a href="omega-3.html"><button class="button">დეტალურად</button></a>
-        </article>
+/* --- ბურგერ ღილაკის სტილი --- */
+.burger-menu {
+    display: none; /* დესკტოპზე დამალულია */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    padding: 0;
+}
 
-        <article class="product-card">
-            <img src="product-pictures/creatine.png" alt="კრეატინი">
-            <h3>კრეატინ მონოჰიდრატი</h3>
-            <p class="price">149.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (98 შეფასება)</p>
-            <a href="creatine.html"><button class="button">დეტალურად</button></a>
-        </article>
+/* ეს ხაზავს სამ ხაზს ბურგერისთვის */
+.burger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-white);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
 
-        <article class="product-card">
-            <img src="product-pictures/MK677.jpg" alt="MK677">
-            <h3>ემქეი-677 SARMS</h3>
-            <p class="price">399.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (75 შეფასება)</p>
-            <a href="mk677.html"><button class="button">დეტალურად</button></a>
-        </article>
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
 
-        <article class="product-card">
-            <img src="product-pictures/turkesterone.jpg" alt="თურქესტერონი">
-            <h3>თურქესტერონი</h3>
-            <p class="price">109.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (63 შეფასება)</p>
-            <a href="turk.html"><button class="button">დეტალურად</button></a>
-        </article>
+nav ul li {
+    margin: 0 15px;
+}
 
-        <article class="product-card">
-            <img src="product-pictures/glutamine.jpg" alt="გლუტამინი">
-            <h3>გლუტამინი</h3>
-            <p class="price">99.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (150 შეფასება)</p>
-            <a href="glutamine.html"><button class="button">დეტალურად</button></a>
-        </article>
+nav ul li a {
+    color: var(--text-white);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 16px;
+}
 
-        <article class="product-card">
-            <img src="product-pictures/bcaa.jpg" alt="BCAA">
-            <h3>ბისიეი/BCAA</h3>
-            <p class="price">89.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (50 შეფასება)</p>
-            <a href="BCAA.html"><button class="button">დეტალურად</button></a>
-        </article>
+nav ul li a:hover {
+    color: var(--accent-gold);
+}
 
-        <article class="product-card">
-            <img src="product-pictures/Omega3.jpg" alt="ომეგა 3">
-            <h3>თევზის ქონი</h3>
-            <p class="price">99.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (120 შეფასება)</p>
-            <a href="omega-3.html"><button class="button">დეტალურად</button></a>
-        </article>
+/* --- მობილური ვერსია (420px) --- */
+@media (max-width: 420px) {
+    header .container {
+        padding: 0 20px;
+        height: 65px;
+    }
 
-        <article class="product-card">
-            <img src="product-pictures/creatine.png" alt="კრეატინი">
-            <h3>კრეატინ მონოჰიდრატი</h3>
-            <p class="price">149.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (98 შეფასება)</p>
-            <a href="creatine.html"><button class="button">დეტალურად</button></a>
-        </article>
+    .burger-menu {
+        display: flex; /* ჩნდება მობილურზე */
+    }
 
-        <article class="product-card">
-            <img src="product-pictures/MK677.jpg" alt="MK677">
-            <h3>ემქეი-677 SARMS</h3>
-            <p class="price">399.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (75 შეფასება)</p>
-            <a href="mk677.html"><button class="button">დეტალურად</button></a>
-        </article>
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* დამალულია მარჯვნივ */
+        width: 70%;
+        height: 100vh;
+        background-color: var(--primary-dark);
+        transition: 0.4s ease-in-out;
+        display: block; /* ვცვლით flex-ს რომ სიები სწორად დალაგდეს */
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
 
-        <article class="product-card">
-            <img src="product-pictures/turkesterone.jpg" alt="თურქესტერონი">
-            <h3>თურქესტერონი</h3>
-            <p class="price">109.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (63 შეფასება)</p>
-            <a href="turk.html"><button class="button">დეტალურად</button></a>
-        </article>
+    nav.active {
+        right: 0; /* შემოდის ეკრანზე */
+    }
 
-        <article class="product-card">
-            <img src="product-pictures/glutamine.jpg" alt="გლუტამინი">
-            <h3>გლუტამინი</h3>
-            <p class="price">99.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (150 შეფასება)</p>
-            <a href="glutamine.html"><button class="button">დეტალურად</button></a>
-        </article>
+    nav ul {
+        flex-direction: column;
+        padding-top: 100px;
+        align-items: center;
+    }
 
-        <article class="product-card">
-            <img src="product-pictures/bcaa.jpg" alt="BCAA">
-            <h3>ბისიეი/BCAA</h3>
-            <p class="price">89.99₾</p>
-            <p class="rating">⭐⭐⭐⭐☆ (50 შეფასება)</p>
-            <a href="BCAA.html"><button class="button">დეტალურად</button></a>
-        </article>
+    nav ul li {
+        margin: 20px 0;
+    }
 
-    </div>
-</div>
-</section>
+    /* ბურგერის ანიმაცია (X-ად გადაქცევა) */
+    .burger-menu.toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .burger-menu.toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-menu.toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+}
 
-<footer id="Contact">
-<div class="container">
-    <div class="social-media">
-        <a href="#" class="social-link"><img src="svg/facebook-brands-solid.svg" alt="Facebook" class="footer-img"> Facebook</a>
-        <a href="#" class="social-link"><img src="svg/instagram-brands-solid (1).svg" alt="Instagram" class="footer-img"> Instagram</a>
-        <a href="#" class="social-link"><img src="svg/x-twitter-brands-solid (2).svg" alt="Twitter" class="footer-img"> Twitter</a>
-    </div>
-    <p>დაგვიკავშირდით: <span>OnlineMaghazia@gmail.com</span></p>
-    <p>&copy; 2026 ჩემი მაღაზია. ყველა უფლება დაცულია.</p>
-</div>      
-</footer>
+/* --- Footer სტილი --- */
+footer {
+    background-color: var(--primary-dark);
+    color: var(--text-white);
+    padding: 30px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
 
-<script src="scripts/main.js"></script>
-</body>
-</html>
+footer .social-media {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .social-link {
+    display: flex;
+    align-items: center;
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+footer .social-link .footer-img {
+    width: 20px;
+    height: 20px; 
+    margin-right: 8px; 
+}
+
+footer .social-link:hover {
+    color: var(--accent-gold);
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+}
