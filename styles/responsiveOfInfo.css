@@ -3,6 +3,7 @@
         flex-direction: column;
         margin: 0;
         padding: 80px 10px 20px 10px;
+        background-color: var(--foni);
     }
 
     .product-image {
@@ -13,6 +14,11 @@
     .product-info {
         margin: 10px 0;
         padding: 10px;
+    }
+
+    .product-info h1 {
+        font-size: 1.5rem;
+        color: var(--textis-feri);
     }
 
     .related-products {
@@ -28,6 +34,8 @@
         margin: 10px 0;
         flex-direction: column;
         align-items: center;
+        background-color: var(--foni-divis);
+        border: 1px solid var(--borderis-feri);
     }
 
     .related-product button {
@@ -42,9 +50,8 @@
 
     .product-info select {
         width: 100%;
-    }
-
-    .product-info h1 {
-        font-size: 1.5rem;
+        background-color: var(--foni-divis);
+        color: var(--textis-feri);
+        border: 1px solid var(--borderis-feri);
     }
 }
