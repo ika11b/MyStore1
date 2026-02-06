@@ -9,15 +9,13 @@ html {
     font-family: 'Arial', sans-serif;
 }
 
-/* ფერები - მუდმივი მნიშვნელობები */
 :root {
-    --foni-divis: #ffffff; /* ბარათები თეთრ ფონზე უფრო კარგად ჩანს */
-    --foni: #f4f4f4;       /* მთლიანი ფონი ოდნავ რუხი */
+    --foni-divis: #ffffff;
+    --foni: #f4f4f4;
     --textis-feri: #333;
     --borderis-feri: #ddd;
 }
 
-/* კონტეინერი */
 .main {
     width: 90%;
     max-width: 1200px;
@@ -25,9 +23,8 @@ html {
     margin-bottom: 100px;
 }
   
-/* სექცია - პროდუქტის ბარათები */
 .products {
-    padding: 80px 0; /* ზემოდან მეტი ადგილი ჰედერის გამო */
+    padding: 80px 0;
     background-color: var(--foni);
 }
   
@@ -42,7 +39,7 @@ html {
 .product-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* ცენტრირება უკეთესია თუ ბოლო ხაზზე ცოტა პროდუქტია */
+    justify-content: center;
     gap: 30px;
 }
 
@@ -62,14 +59,14 @@ html {
   
 .product-card:hover {
     cursor: pointer;
-    transform: translateY(-10px); /* ოდნავ ზემოთ აწევა უფრო ეფექტურია */
+    transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
   
 .product-card img {
     width: 100%;
     height: 200px;
-    object-fit: contain; /* სურათი რომ არ გაიწელოს */
+    object-fit: contain;
     margin-bottom: 15px;
 }
   
@@ -89,33 +86,38 @@ html {
 .product-card .rating {
     margin-bottom: 15px;
     font-size: 14px;
-    color: #f1c40f; /* ვარსკვლავები ოქროსფერი */
+    color: #f1c40f;
 }
 
-/* რესპონსივი */
-@media (max-width: 1024px) {
-    .product-card {
-        width: calc(50% - 30px);
+@media (min-width: 1440px) {
+    .main {
+        max-width: 1400px;
+    }
+    .product-cards {
+        gap: 40px;
     }
 }
 
-@media (max-width: 768px) {
-    .product-card {
-        width: calc(100% - 40px);
-        max-width: 400px;
-    }
-
-    .products h2 {
-        font-size: 26px;
-    }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 420px) {
     .products {
-        padding: 40px 0;
+        padding: 60px 0;
     }
 
     .products h2 {
         font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    .product-card {
+        width: calc(100% - 20px);
+        padding: 15px;
+    }
+
+    .product-card img {
+        height: 160px;
+    }
+
+    .product-card h3 {
+        font-size: 17px;
     }
 }
