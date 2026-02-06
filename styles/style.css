@@ -2,23 +2,22 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ფერები დარქ მოუდის და ისე */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ფერები - მუდმივი მნიშვნელობები */
 :root {
-    --foni-divis: #e4e4e4; 
-    --foni: #e0e0e0;
-    --textis-feri: black;
-    --borderis-feri: #b3b2b2;
+    --foni-divis: #ffffff; /* ბარათები თეთრ ფონზე უფრო კარგად ჩანს */
+    --foni: #f4f4f4;       /* მთლიანი ფონი ოდნავ რუხი */
+    --textis-feri: #333;
+    --borderis-feri: #ddd;
 }
 
-.dark-theme {
-    --foni: black;
-    --foni-divis: #333;
-    --textis-feri: white;
-    --borderis-feri: #333;
-}
-
-/* Container for content */
-
+/* კონტეინერი */
 .main {
     width: 90%;
     max-width: 1200px;
@@ -26,112 +25,97 @@ html {
     margin-bottom: 100px;
 }
   
-  /* Main Section - Product Cards */
+/* სექცია - პროდუქტის ბარათები */
 .products {
-    padding: 50px 0;
+    padding: 80px 0; /* ზემოდან მეტი ადგილი ჰედერის გამო */
     background-color: var(--foni);
-
 }
   
 .products h2 {
     text-align: center;
-    margin: 32px;
-    font-size: 28px;
+    margin-bottom: 40px;
+    font-size: 32px;
     color: var(--textis-feri);
+    font-weight: bold;
 }
   
 .product-cards {
     display: flex;
     flex-wrap: wrap;
-    z-index: 1000;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center; /* ცენტრირება უკეთესია თუ ბოლო ხაზზე ცოტა პროდუქტია */
+    gap: 30px;
 }
- 
-
 
 .product-card {
     background-color: var(--foni-divis);
-    padding: 20px;
+    padding: 25px;
     border: 1px solid var(--borderis-feri);
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
-    width: calc(33.333% - 20px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    width: calc(33.333% - 30px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
   
 .product-card:hover {
     cursor: pointer;
-    transform: scale(1.05); 
-    transition: 0.7s;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px); /* ოდნავ ზემოთ აწევა უფრო ეფექტურია */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
   
 .product-card img {
-    width: 80%;
-    height: auto;
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* სურათი რომ არ გაიწელოს */
+    margin-bottom: 15px;
 }
   
 .product-card h3 {
-    font-size: 18px;
+    font-size: 19px;
     margin: 10px 0;
     color: var(--textis-feri);
-
 }
   
 .product-card .price {
-    font-size: 20px;
+    font-size: 22px;
     color: #e74c3c;
-    margin: 10px 0;
+    margin: 5px 0;
+    font-weight: bold;
 }
   
 .product-card .rating {
     margin-bottom: 15px;
     font-size: 14px;
-    color: var(--textis-feri);
+    color: #f1c40f; /* ვარსკვლავები ოქროსფერი */
 }
 
 /* რესპონსივი */
 @media (max-width: 1024px) {
     .product-card {
-        width: calc(50% - 20px);
+        width: calc(50% - 30px);
     }
 }
 
 @media (max-width: 768px) {
     .product-card {
-        width: calc(100% - 20px);
-    }
-
-    .product-cards {
-        flex-direction: column;
-        align-items: center;
+        width: calc(100% - 40px);
+        max-width: 400px;
     }
 
     .products h2 {
-        font-size: 24px;
+        font-size: 26px;
     }
 }
 
 @media (max-width: 480px) {
+    .products {
+        padding: 40px 0;
+    }
+
     .products h2 {
-        font-size: 20px;
-    }
-
-    .product-card h3 {
-        font-size: 16px;
-    }
-
-    .product-card .price {
-        font-size: 18px;
-    }
-
-    .product-card .rating {
-        font-size: 12px;
-    }
-
-    .product-card img {
-        width: 100%;
+        font-size: 22px;
     }
 }
