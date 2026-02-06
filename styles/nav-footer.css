@@ -116,22 +116,9 @@ footer p {
     margin-top: 10px;
 }
 
-/* რესპონსივი */
-@media (max-width: 768px) {
+/* --- რესპონსივი ლექტორის მოთხოვნის მიხედვით --- */
+
+/* დესკტოპის breakpoint (1440px და მეტი) */
+@media (min-width: 1440px) {
     header .container {
-        padding: 0 20px;
-        height: 60px;
-    }
-
-    .logo a {
-        font-size: 20px;
-    }
-
-    nav ul li {
-        margin: 0 10px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
-}
+        padding: 0
