@@ -1,64 +1,46 @@
-/* ეს არი სურვილების სიაში დამატების ღილაკის სტილი */
-.button {
-    width: 100%;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+:root {
+    --accent-blue: #3498db;
+    --accent-blue-hover: #2980b9;
+    --accent-blue-active: #216fa3;
+    --text-white: #ffffff;
 }
 
-.button:hover {
-    background-color: #2980b9;
-}
-
-.button:active{
-    background-color: #216fa3;
-}
-
-/* ეს შემოთავაზებული პროდუქტების ღილაკის სტილი */
-.related-product button {
-    width: 100%;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin-top: 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.related-product button:hover {
-    background-color: #2980b9;
-}
-
-.related-product button:active {
-    background-color: #216fa3;
-}
-
-/* ეს მთავარი გვერდის ღილაკების */
+.button, 
+.related-product button, 
 .product-card .button {
-    background-color: #3498db;
-    color: #fff;
+    width: 100%;
+    background-color: var(--accent-blue);
+    color: var(--text-white);
     border: none;
+    font-size: 1rem;
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
-  
+
+.button:hover, 
+.related-product button:hover, 
 .product-card .button:hover {
-    background-color: #2980b9;
+    background-color: var(--accent-blue-hover);
 }
-  
+
+.button:active, 
+.related-product button:active, 
 .product-card .button:active {
-    background-color: #216fa3;
+    background-color: var(--accent-blue-active);
+}
+
+.related-product button {
+    margin-top: 25px;
+}
+
+@media (max-width: 420px) {
+    .button, 
+    .related-product button, 
+    .product-card .button {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
 }
