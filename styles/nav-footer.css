@@ -31,6 +31,28 @@ header .container {
     font-weight: bold;
 }
 
+/* --- ბურგერ ღილაკის სტილი (დესკტოპზე დამალულია) --- */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.burger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-white);
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -52,6 +74,60 @@ nav ul li a:hover {
     color: var(--accent-gold);
 }
 
+/* --- მობილური ვერსია (420px) --- */
+@media (max-width: 420px) {
+    header .container {
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .burger-menu {
+        display: flex; /* აქ ჩნდება ბურგერი */
+    }
+
+    /* ნავიგაცია გადაგვაქვს ეკრანის გარეთ მარჯვნივ */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 70%;
+        height: 100vh;
+        background-color: var(--primary-dark);
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+
+    /* კლასი, რომელსაც JavaScript დაამატებს */
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-top: 100px;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    /* ბურგერის ანიმაცია X-ად გადაქცევისთვის */
+    .burger-menu.toggle span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .burger-menu.toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger-menu.toggle span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+}
+
+/* --- Footer სტილი (უცვლელი) --- */
 footer {
     background-color: var(--primary-dark);
     color: var(--text-white);
@@ -78,7 +154,7 @@ footer .social-link {
 }
 
 footer .social-link .footer-img {
-    width: 20px; /* ხატულების ნორმალური ზომა */
+    width: 20px;
     height: 20px; 
     margin-right: 8px; 
     transition: transform 0.3s ease;
@@ -89,28 +165,9 @@ footer .social-link:hover {
 }
 
 footer .social-link:hover .footer-img {
-    transform: scale(1.1); /* ნაზი გაზრდა ჰოვერზე */
+    transform: scale(1.1);
 }
 
 footer p {
     margin-top: 10px;
-}
-
-@media (max-width: 420px) {
-    header .container {
-        padding: 0 15px;
-        height: 60px;
-    }
-
-    .logo a {
-        font-size: 18px;
-    }
-
-    nav ul li {
-        margin: 0 8px;
-    }
-
-    nav ul li a {
-        font-size: 13px;
-    }
 }
