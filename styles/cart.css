@@ -1,33 +1,19 @@
-html {
-    scroll-behavior: smooth;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
 }
-  
-body {
-    line-height: 1.6;
-    background-color: white;
-    color: #333;
-}
 
-/* ფერები დარქ მოუდის და ისე */
 :root {
     --foni-divis: #e4e4e4; 
     --foni: #e0e0e0;
-    --textis-feri: black;
+    --textis-feri: #000000;
     --borderis-feri: #b3b2b2;
-}
-
-.dark-theme {
-    --foni: black;
-    --foni-divis: #333;
-    --textis-feri: white;
-    --borderis-feri: #333;
+    --accent-red: #e74c3c;
+    --accent-blue: #3498db;
+    --accent-blue-hover: #2980b9;
+    --primary-dark: #252525;
 }
 
 .parent {
@@ -58,7 +44,7 @@ body {
 .related-product:hover {
     transition: 0.4s ease;
     opacity: 0.8;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .related-product img {
@@ -73,15 +59,9 @@ body {
     justify-content: center;
 }
 
-.related-product p {
-    margin-bottom: 5px;
-}
-
-/* ღილაკი */
-
 .related-product button {
     width: auto;
-    background-color: #3498db;
+    background-color: var(--accent-blue);
     color: #fff;
     border: none;
     font-size: 1rem;
@@ -94,18 +74,13 @@ body {
 }
 
 .related-product button:hover {
-    background-color: #2980b9;
-}
-
-.related-product button:active {
-    background-color: #216fa3;
+    background-color: var(--accent-blue-hover);
 }
 
 h3 {
     align-items: end;
     font-size: 1.3rem;
     font-weight: bold;
-    /* margin: 100px 50px 0 50px; */
     display: flex;
     justify-content: space-evenly;
     height: 150px;
@@ -114,11 +89,10 @@ h3 {
 }
 
 .price {
-    color: red;
+    color: var(--accent-red);
     font-weight: bold;
 }
 
-/* კალათის სტილები */
 .cart {
     margin: 50px ;
     padding: 20px;
@@ -127,15 +101,10 @@ h3 {
     width: 100%;
     max-height: 600px;
     overflow: scroll;
-    right: 10px;
 }
 
 .cart h2 {
     color: var(--textis-feri);
-}
-
-#cart-items {
-    margin-bottom: 20px;
 }
 
 .cart-item {
@@ -144,7 +113,7 @@ h3 {
     margin-bottom: 10px;
     padding: 10px;
     background-color: var(--foni-divis);
-    border: 1px solid grey;
+    border: 1px solid var(--borderis-feri);
 }
 
 .cart-item img {
@@ -153,128 +122,59 @@ h3 {
     margin-right: 10px;
 }
 
-.cart-item .item-info {
-    flex: 1;
-}
-
 .cart-item button {
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-    background-color: #3498db;
+    background-color: var(--accent-blue);
     width: auto;
     transition: background-color 0.3s;
     border-radius: 5px;
     font-weight: bold;
     font-size: 1rem;
-
 }
 
 .cart-item button:hover {
-    background-color: #2980b9;
+    background-color: var(--accent-blue-hover);
 }
 
-.cart-item button:active {
-    background-color: #216fa3;
+@media (min-width: 1440px) {
+    .parent {
+        padding: 0 50px;
+    }
 }
 
-#cart-total {
-    font-weight: bold;
-    color: var(--textis-feri);
-}
-
-.product-name {
-    color: var(--textis-feri);
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 420px) {
     .parent {
         flex-direction: column;
     }
 
     .related-products {
-        margin: 10px;
-        /* margin-left: 50px; */
-        width: 95%;
-    }
-
-    .related-product {
-        width: 95%;
-        align-items: center;
-        justify-content: space-around;
-        font-size: 1.5rem;
-    }
-
-    .cart {
-        width: 90%;
-    }
-
-    .related-product button {
-        width: 250px;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .parent {
-        flex-direction: column;
-    }
-
-    .related-products {
-        margin: 0 40px;
-        width: 90%;
-    }
-
-    .related-product {
-        width: 90%;
-        padding: 7px;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    footer {
         width: 100%;
-    }
-
-    .cart {
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    .parent {
-        flex-direction: column;
-    }
-
-    .related-products {
-        /* margin: 10px; */
-        /* margin-left: 20px; */
-        width: 90%;
+        margin: 0;
         align-items: center;
-        justify-content: center;
-        margin: 0 12px;
     }
 
     .related-product {
-        width: 85%;
-        padding: 7px;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 1rem;
-        margin-right: 12px;
-    }
-
-    .cart {
-        width: 80%;
+        width: 90%;
+        margin: 10px 0;
+        flex-direction: column;
+        text-align: center;
     }
 
     .related-product img {
-        width: 135px;
-        height: 135px;
+        width: 100%;
+        height: auto;
+    }
+
+    .cart {
+        width: 95%;
+        margin: 20px auto;
     }
 
     .related-product button {
-        width: 110px;
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
