@@ -9,7 +9,7 @@ html {
     font-family: 'Arial', sans-serif;
 }
 
-/* ფერები - გამარტივებული ვერსია Dark Mode-ის გარეშე */
+/* ფერები */
 :root {
     --foni-divis: #e4e4e4; 
     --foni: #e0e0e0;
@@ -22,7 +22,7 @@ html {
     background-color: var(--foni);
     display: flex;
     justify-content: space-between;
-    padding: 100px 50px 70px 50px; /* დავამატე ზედა პედინგი ჰედერის გამო */
+    padding: 100px 50px 70px 50px;
     margin: 0;
 } 
 
@@ -35,7 +35,7 @@ html {
 }
 
 .product-image:hover {
-    transform: scale(1.05); /* 1.2 ზედმეტად დიდი იყო და სურათს ჭრიდა */
+    transform: scale(1.05);
 }
 
 .product-image img {
@@ -67,12 +67,6 @@ html {
     margin-bottom: 15px;
     color: var(--textis-feri);
     font-size: 1.1rem;
-}
-
-.product-info label {
-    display: block;
-    color: var(--textis-feri);
-    margin-bottom: 5px;
 }
 
 .product-info select {
@@ -107,7 +101,7 @@ section p {
     font-weight: bold;
 }
 
-/* Right Section (Related Products - Aside) */
+/* Right Section (Related Products) */
 .related-products {
     flex: 1;
     padding: 0 20px;
@@ -125,23 +119,12 @@ section p {
     transition: 0.3s ease;
 }
 
-.related-product:hover {
-    opacity: 0.9;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
-
 .related-product img {
     width: 80px;
     height: 80px;
     object-fit: contain;
     background: white;
     border-radius: 4px;
-}
-
-.related-product div {
-    display: flex;
-    flex-direction: column;
 }
 
 /* Bottom Section (Product Description) */
@@ -164,4 +147,53 @@ section p {
     margin-bottom: 15px;
     line-height: 1.8;
     text-align: justify;
+}
+
+/* --- რესპონსივი ლექტორის მოთხოვნის მიხედვით --- */
+
+/* დესკტოპის breakpoint (1440px) */
+@media (min-width: 1440px) {
+    .product-page {
+        padding: 120px 150px 100px 150px; /* დიდ ეკრანზე მეტი სივრცე */
+    }
+    
+    .product-info {
+        margin: 0 100px;
+    }
+}
+
+/* მობილურის breakpoint (420px) */
+@media (max-width: 420px) {
+    .product-page {
+        flex-direction: column; /* სვეტები ჩამოდის ერთმანეთის ქვეშ */
+        padding: 80px 15px 20px 15px;
+    }
+
+    .product-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .product-info {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .product-info h1 {
+        font-size: 1.6rem;
+    }
+
+    .related-products {
+        padding: 20px 0;
+        margin-top: 20px;
+        border-top: 1px dashed var(--borderis-feri);
+    }
+
+    .product-description {
+        padding: 30px 15px;
+    }
+
+    .product-description h2 {
+        font-size: 20px;
+    }
 }
