@@ -61,12 +61,56 @@ footer {
     margin-top: 50px;
 }
 
+footer .social-media {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 footer .social-link {
+    display: flex;
+    align-items: center;
     color: var(--text-white);
     text-decoration: none;
+    font-size: 16px;
     transition: color 0.3s;
+}
+
+footer .social-link .footer-img {
+    width: 20px; /* ხატულების ნორმალური ზომა */
+    height: 20px; 
+    margin-right: 8px; 
+    transition: transform 0.3s ease;
 }
 
 footer .social-link:hover {
     color: var(--accent-gold);
+}
+
+footer .social-link:hover .footer-img {
+    transform: scale(1.1); /* ნაზი გაზრდა ჰოვერზე */
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+@media (max-width: 420px) {
+    header .container {
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .logo a {
+        font-size: 18px;
+    }
+
+    nav ul li {
+        margin: 0 8px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
 }
