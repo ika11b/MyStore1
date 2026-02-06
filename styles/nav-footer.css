@@ -11,6 +11,7 @@ body {
     background-color: white;
     color: #333;
 }
+
 /* ნავბარი */
 header {
     color: #fff;
@@ -28,40 +29,42 @@ header .container {
     position: fixed;
     top: 0; 
     z-index: 1000;
-
 }
   
 .logo a {
     font-size: 24px;
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 nav {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
   
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
 }
   
 nav ul li {
-    margin: 10px 10px 20px 10px;
+    margin: 0 15px;
 }
 
 nav img {
     height: 15px;
     width: 15px;
+    vertical-align: middle;
+    margin-left: 5px;
 }
-
   
 nav ul li a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s;
+    font-size: 16px;
 }
 
 nav ul li a:hover,
@@ -69,43 +72,7 @@ nav ul li a:active {
     color: #ffd700;
 }
 
-#icon {
-    height: 37px;
-    width: 37px;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0 10px 20px;
-    padding: 5px;
-}
-
-#icon:hover {
-    /* background-color: #fcfeda; */
-    transition: 0.3s;
-}
-
-.lang {
-    font-size: 1.7rem;
-    display: flex;
-    margin-left: 20px;
-    margin-bottom: 7px;
-    /* padding: 5px; */
-    position: relative;
-}
-
-.lang select {
-    /* margin: 50px; */
-    font-size: 1rem;
-    border: none;
-    width: 160px;
-    border-radius: 8px;
-    padding: 7px 10px;
-    margin: 0;
-    font-weight: bold;
-}
-
-
 /* ფუტერი */
-
 footer {
     background-color: #252525;
     color: #fff;
@@ -150,49 +117,21 @@ footer p {
 }
 
 /* რესპონსივი */
-
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     header .container {
-        flex-direction: row; 
-        height: auto; 
-        padding: 5px 10px; 
+        padding: 0 20px;
+        height: 60px;
     }
 
-    nav {
-        flex-direction: row; 
-        align-items: center; 
-        justify-content: flex-start; 
-    }
-
-    nav ul {
-        flex-direction: row; 
-        margin: 0; 
-        padding: 0; 
+    .logo a {
+        font-size: 20px;
     }
 
     nav ul li {
-        margin: 0 5px; 
-        margin-bottom: 10px;
+        margin: 0 10px;
     }
 
-    .lang {
-        font-size: 1.7rem; 
-        margin-left: 5px; 
-    }
-
-    .lang select {
-        display: none; 
-        position: absolute; 
-        top: 30px; 
-        left: 0;
-        border: none;
-        z-index: 1;
-        border-radius: 4px; 
-        padding: 3px; 
-        font-size: 0.8rem; 
-    }
-
-    .lang:hover select {
-        display: block; 
+    nav ul li a {
+        font-size: 14px;
     }
 }
