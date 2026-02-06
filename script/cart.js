@@ -58,10 +58,11 @@ function renderCart() {
 // Remove item from cart
 function removeFromCart(id) {
     const index = cartItems.findIndex(item => item.id == id);
-    if (index > 1) {
+    if (index > -1) {
         cartItems.splice(index, 1);
     }
 
     renderCart();
 }
+
 
