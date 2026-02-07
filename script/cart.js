@@ -1,9 +1,7 @@
-// Store cart items
 const cartItems = [];
 const cartItemsContainer = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 
-// Add to cart event
 document.querySelectorAll('.add-to-cart-btn').forEach(button => {
     button.addEventListener('click', function() {
         const product = this.closest('.related-product');
@@ -15,8 +13,6 @@ document.querySelectorAll('.add-to-cart-btn').forEach(button => {
         addToCart(id, name, price, img);
     });
 });
-
-// Function to add items to the cart
 function addToCart(id, name, price, img) {
     const cartItem = {
         id,
@@ -25,14 +21,11 @@ function addToCart(id, name, price, img) {
         img
     };
 
-    // Add the item to the cart array
     cartItems.push(cartItem);
-
-    // Render the cart
     renderCart();
 }
 
-// Render the cart items and calculate total
+
 function renderCart() {
     cartItemsContainer.innerHTML = '';
     let total = 0;
@@ -55,7 +48,7 @@ function renderCart() {
     cartTotal.textContent = `ჯამი: ${total.toFixed(2)}₾`;
 }
 
-// Remove item from cart
+
 function removeFromCart(id) {
     const index = cartItems.findIndex(item => item.id == id);
     if (index > -1) {
@@ -64,5 +57,6 @@ function removeFromCart(id) {
 
     renderCart();
 }
+
 
 
