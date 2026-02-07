@@ -31,7 +31,6 @@ header .container {
     font-weight: bold;
 }
 
-/* ბურგერ ღილაკი */
 .burger-menu {
     display: none;
     flex-direction: column;
@@ -52,6 +51,11 @@ header .container {
     background-color: var(--text-white);
     border-radius: 3px;
     transition: all 0.3s ease;
+}
+
+/* დესკტოპ ნავიგაცია */
+nav {
+    display: block;
 }
 
 nav ul {
@@ -75,7 +79,7 @@ nav ul li a:hover {
     color: var(--accent-gold);
 }
 
-/* მობილური ვერსია (420px) */
+/* მობილური ვერსია */
 @media (max-width: 420px) {
     header .container {
         padding: 0 20px;
@@ -94,7 +98,6 @@ nav ul li a:hover {
         height: 100vh;
         background-color: var(--primary-dark);
         transition: 0.4s ease-in-out;
-        display: block;
         box-shadow: -5px 0 15px rgba(0,0,0,0.5);
     }
 
@@ -160,6 +163,5 @@ footer .social-link:hover {
 
 footer p {
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 14px;
 }
-
