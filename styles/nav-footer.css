@@ -17,10 +17,10 @@ header .container {
     height: 75px;
     background-color: var(--primary-dark);
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 0; 
+    top: 0;
     z-index: 1000;
 }
 
@@ -31,7 +31,7 @@ header .container {
     font-weight: bold;
 }
 
-/* --- ბურგერ ღილაკის სტილი (დესკტოპზე დამალულია) --- */
+/* ბურგერ ღილაკი */
 .burger-menu {
     display: none;
     flex-direction: column;
@@ -42,6 +42,7 @@ header .container {
     border: none;
     cursor: pointer;
     z-index: 1100;
+    padding: 0;
 }
 
 .burger-menu span {
@@ -50,7 +51,7 @@ header .container {
     height: 3px;
     background-color: var(--text-white);
     border-radius: 3px;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 nav ul {
@@ -74,30 +75,29 @@ nav ul li a:hover {
     color: var(--accent-gold);
 }
 
-/* --- მობილური ვერსია (420px) --- */
+/* მობილური ვერსია (420px) */
 @media (max-width: 420px) {
     header .container {
-        padding: 0 15px;
-        height: 60px;
+        padding: 0 20px;
+        height: 65px;
     }
 
     .burger-menu {
-        display: flex; /* აქ ჩნდება ბურგერი */
+        display: flex;
     }
 
-    /* ნავიგაცია გადაგვაქვს ეკრანის გარეთ მარჯვნივ */
     nav {
         position: fixed;
         top: 0;
-        right: -100%; 
+        right: -100%;
         width: 70%;
         height: 100vh;
         background-color: var(--primary-dark);
         transition: 0.4s ease-in-out;
+        display: block;
         box-shadow: -5px 0 15px rgba(0,0,0,0.5);
     }
 
-    /* კლასი, რომელსაც JavaScript დაამატებს */
     nav.active {
         right: 0;
     }
@@ -105,17 +105,13 @@ nav ul li a:hover {
     nav ul {
         flex-direction: column;
         padding-top: 100px;
+        align-items: center;
     }
 
     nav ul li {
         margin: 20px 0;
     }
 
-    nav ul li a {
-        font-size: 18px;
-    }
-
-    /* ბურგერის ანიმაცია X-ად გადაქცევისთვის */
     .burger-menu.toggle span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
     }
@@ -127,7 +123,6 @@ nav ul li a:hover {
     }
 }
 
-/* --- Footer სტილი (უცვლელი) --- */
 footer {
     background-color: var(--primary-dark);
     color: var(--text-white);
@@ -155,19 +150,15 @@ footer .social-link {
 
 footer .social-link .footer-img {
     width: 20px;
-    height: 20px; 
-    margin-right: 8px; 
-    transition: transform 0.3s ease;
+    height: 20px;
+    margin-right: 8px;
 }
 
 footer .social-link:hover {
     color: var(--accent-gold);
 }
 
-footer .social-link:hover .footer-img {
-    transform: scale(1.1);
-}
-
 footer p {
     margin-top: 10px;
+    font-size: 14px;
 }
